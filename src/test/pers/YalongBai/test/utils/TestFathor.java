@@ -2,6 +2,9 @@ package test.pers.YalongBai.test.utils;
 
 public abstract class TestFathor {
 
+    public static Logger logger = Logger.getInstance();
+
+
     /**
      *  描述：作为测试的公共类执行
      *  1、初始化模块：将类中的数据初始赋值 参数:intAttr1, intAttr2, intAttr3, strAttr1, strAttr2, strAttr3
