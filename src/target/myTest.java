@@ -1,6 +1,6 @@
 package target;
 
-import test.pers.YalongBai.test.handler.SingleTonTest;
+import test.pers.YalongBai.test.handler.ReflectTest;
 import test.pers.YalongBai.test.utils.Logger;
 
 public class myTest {
@@ -24,8 +24,8 @@ public class myTest {
          * 3. 饿汉式（不安全测试）
          * 4. 饿汉式（同步关键字）
          * 5. 饿汉式（双重校验）
-         * 6. 内部静态类
-         */
+         * 6. 内部静态类*/
+        /*
         logger.info("单例测试");
         Object object = SingleTonTest.getInstance("SingleTon");
         logger.info(object.getClass());
@@ -40,7 +40,17 @@ public class myTest {
         Object object5 = SingleTonTest.getInstance("SingleTon5");
         logger.info(object5.toString());
         object5 = SingleTonTest.getInstance("SingleTon5");
-        logger.info(object5);
+        logger.info(object5);*/
+
+
+        /**
+         * 反射
+         */
+        ReflectTest reflectTest = new ReflectTest();
+        reflectTest.init();
+       // reflectTest.showClass();
+        reflectTest.handler();
+
 
 
     }

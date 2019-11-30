@@ -67,51 +67,51 @@ public abstract class TestFathor {
                 '}';
     }
 
-    public int getIntAttr1() {
+    protected int getIntAttr1() {
         return intAttr1;
     }
 
-    public void setIntAttr1(int intAttr1) {
+    protected void setIntAttr1(int intAttr1) {
         this.intAttr1 = intAttr1;
     }
 
-    public int getIntAttr2() {
+    protected int getIntAttr2() {
         return intAttr2;
     }
 
-    public void setIntAttr2(int intAttr2) {
+    protected void setIntAttr2(int intAttr2) {
         this.intAttr2 = intAttr2;
     }
 
-    public int getIntAttr3() {
+    protected int getIntAttr3() {
         return intAttr3;
     }
 
-    public void setIntAttr3(int intAttr3) {
+    protected void setIntAttr3(int intAttr3) {
         this.intAttr3 = intAttr3;
     }
 
-    public String getStrAttr1() {
+    protected String getStrAttr1() {
         return strAttr1;
     }
 
-    public void setStrAttr1(String strAttr1) {
+    protected void setStrAttr1(String strAttr1) {
         this.strAttr1 = strAttr1;
     }
 
-    public String getStrAttr2() {
+    protected String getStrAttr2() {
         return strAttr2;
     }
 
-    public void setStrAttr2(String strAttr2) {
+    protected void setStrAttr2(String strAttr2) {
         this.strAttr2 = strAttr2;
     }
 
-    public String getStrAttr3() {
+    protected String getStrAttr3() {
         return strAttr3;
     }
 
-    public void setStrAttr3(String strAttr3) {
+    protected void setStrAttr3(String strAttr3) {
         this.strAttr3 = strAttr3;
     }
 }

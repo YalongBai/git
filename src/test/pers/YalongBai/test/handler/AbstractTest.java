@@ -11,12 +11,22 @@ import test.pers.YalongBai.test.utils.TestFathor;
  */
 public class AbstractTest extends TestFathor {
 
+    private String privateValue;  // 用于ReflectTest测试私有变量
+
     static {
         logger.info("这是AbstractTest静态代码块");
     }
 
     public AbstractTest() {
+
         logger.info("这是AbstractTest的构造方法！");
+    }
+
+    /**
+     * 用于ReflectTest测试私有变量
+     */
+    public void test1(){
+        logger.info("现在privateValue = " + privateValue);
     }
 
     @Override
