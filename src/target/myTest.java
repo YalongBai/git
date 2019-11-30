@@ -44,11 +44,11 @@ public class myTest {
 
 
         /**
-         * 反射
+         * 反射测试
          */
         ReflectTest reflectTest = new ReflectTest();
         reflectTest.init();
-       // reflectTest.showClass();
+        reflectTest.showClass();
         reflectTest.handler();
 
 
