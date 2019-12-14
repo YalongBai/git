@@ -17,8 +17,10 @@ class Test {
 
 public class pcTest {
     public static void main(String[] args) {
-        Test singleTon = Test.getInstance();
+        String a = "";
+        System.out.println(a.isEmpty());
+        /*Test singleTon = Test.getInstance();
         System.out.println("count1=" + singleTon.count1);
-        System.out.println("count2=" + singleTon.count2);
+        System.out.println("count2=" + singleTon.count2);*/
     }
 }

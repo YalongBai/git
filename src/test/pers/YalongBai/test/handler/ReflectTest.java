@@ -27,7 +27,7 @@ public class ReflectTest extends TestFathor {
     private Class<?> initClassObj(String className){
         try {
             clazz = Class.forName(className);
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             logger.info("不存在的类");
             e.printStackTrace();
         }
