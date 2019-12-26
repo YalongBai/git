@@ -1,5 +1,6 @@
 package target;
 
+import test.pers.YalongBai.test.handler.ArraySortTest;
 import test.pers.YalongBai.test.handler.IOTest;
 import test.pers.YalongBai.test.handler.ReflectTest;
 import test.pers.YalongBai.test.handler.ThrowableTest;
@@ -62,10 +63,14 @@ public class myTest {
         test.fileTest("./src/target/myTest.txt", "./src/resource/test/pers/YalongBai/test/test1.txt");
         test.deletFile("./src/resource/test/pers/YalongBai/test/test1.txt");
         test.handler();*/
-        ThrowableTest throwable = new ThrowableTest();
-        throwable.handler();
-
-
+        /*ThrowableTest throwable = new ThrowableTest();
+        throwable.handler();*/
+        /**
+         * 数组测试
+         * */
+        ArraySortTest sortTest = new ArraySortTest();
+        sortTest.init();
+        sortTest.handler();
 
 
     }
