@@ -40,9 +40,10 @@ public class ArraySortTest extends TestFathor {
         print(tempArray);
         logger.info( "耗时==" + (System.currentTimeMillis() - curTime3 ) );*/
 
-
+        /**堆排序*/
         logger.info("堆排序");
-        stackSort(tempArray);
+        heapSort(tempArray);
+        print(tempArray);
     }
 
     /**
@@ -52,7 +53,47 @@ public class ArraySortTest extends TestFathor {
     * @Auther: 白亚龙
     * @Date: 2019/12/27
     */
-    private void stackSort(int[] tempArray) {
+    private void heapSort(int[] tempArray) {
+
+        for (int i = tempArray.length - 1; i > 0; i--) {
+            initHeap( tempArray, i);
+            // 堆顶元素与tempArray[i] 交换
+            int temp = tempArray[i];
+            tempArray[i] = tempArray[0];
+            tempArray[0] = temp;
+        }
+
+        
+
+    }
+
+    /**
+    * @Description: 将数组初始化成一个堆，并排序
+     *  i = 第一个非叶子节点。
+     *  从第一个非叶子节点开始即可。无需从最后一个叶子节点开始。
+     *  叶子节点可以看作已符合堆要求的节点，根节点就是它自己且自己以下值为最大。
+    * @Param: tempArray 数组， n 堆长度
+    * @Return:
+    * @Auther: 白亚龙
+    * @Date: 2019/12/29
+    */
+    private void initHeap(int[] tempArray, int n) {
+        int child;
+        for (int i = ( n - 1 ) / 2; i >= 0; i-- ) {
+            // 左子节点位置
+            child = 2 * i + 1;
+            // 如果右子节点存在，且大于左子节点，child变成右子节点
+            if ( child != n && tempArray[child] < tempArray[child+1] ) {
+                child ++;
+            }
+
+            // 交换父节点与左右节点中的最大值
+            if ( tempArray[i] < tempArray[child] ) {
+                int temp = tempArray[i];
+                tempArray[i] = tempArray[child];
+                tempArray[child] = temp;
+            }
+        }
 
 
     }
