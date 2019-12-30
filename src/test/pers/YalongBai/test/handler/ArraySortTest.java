@@ -25,10 +25,10 @@ public class ArraySortTest extends TestFathor {
         print(tempArray);
         logger.info( "耗时==" + (System.currentTimeMillis() - curTime1 ) );
 
-        *//**
+        *//**//**
          *  快速排序的基本思想：挖坑填数+分治法。
          *  快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。
-         * *//*
+         * *//**//*
         //logger.info("快速排序");
         long curTime2 = System.currentTimeMillis();
         //quickSort(tempArray2, 0, tempArray2.length - 1);// 第二种排序方式，快速排序
@@ -38,12 +38,50 @@ public class ArraySortTest extends TestFathor {
         long curTime3 = System.currentTimeMillis();
         mergeSort(tempArray);
         print(tempArray);
-        logger.info( "耗时==" + (System.currentTimeMillis() - curTime3 ) );*/
+        logger.info( "耗时==" + (System.currentTimeMillis() - curTime3 ) );*//*
 
-        /**堆排序*/
+        *//**堆排序*//*
         logger.info("堆排序");
         heapSort(tempArray);
-        print(tempArray);
+        print(tempArray);*/
+        /**希尔排序*/
+        shellSort(tempArray2);
+        print(tempArray2);
+
+    }
+
+    /**
+     * 希尔排序 由Donald Shell命名， 是插入法的改进（对于中等数据的规模表现不错）
+     * 排序思路：首先它把较大的数据集合分割成若干个小组（逻辑上分组），然后对每一个小组分别进行插入排序，此时，插入排序所作用的数据量比较小（每一个小组），插入的效率比较高
+     *
+     */
+    private void shellSort(int[] tempArray2) {
+
+        // Knouh序列
+        int gap = 1;
+        while ( gap < tempArray2.length / 3 ) {
+            gap = gap / 3 + 1;
+        }
+        // 进行增量, 初始的增量（gap）为数组长度的一般
+        for ( ; gap > 0; gap = ( gap - 1 ) / 3 ) {
+            // 对各个分组进行插入排序
+            insertSort(tempArray2, gap);
+        }
+    }
+
+    /**
+     * 插入排序
+     * */
+    private void insertSort(int[] tempArray2, int gap) {
+        for (int i = gap; i < tempArray2.length; i++) {
+                int temp = tempArray2[i];
+                int j;
+            for ( j = i; ( j > gap - 1 ) && ( temp > tempArray2[j-gap] ) ; j -= gap ) {
+                tempArray2[j] = tempArray2[j-gap];
+            }
+            tempArray2[j] = temp;
+
+        }
     }
 
     /**
