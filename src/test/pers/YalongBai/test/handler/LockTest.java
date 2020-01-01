@@ -44,7 +44,7 @@ public class LockTest extends ReentrantLock {
         for (int i = 0; i < cycle; i++) {
             new Thread(()->{
                 try {
-                lockDemo.getLock();
+                lockDemo.await();
                 }catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -58,7 +58,7 @@ public class LockTest extends ReentrantLock {
 
         for (int i = 0; i < cycle; i++) {
             new Thread( ()->{
-                lockDemo.relaseLock();
+                lockDemo.signal();
             } ).start();
         }
 
@@ -78,7 +78,7 @@ public class LockTest extends ReentrantLock {
         Condition condition = lock == null ? new ReentrantLock().newCondition() : lock.newCondition();
 
         // 唤醒线程
-        protected void getLock() throws InterruptedException {
+        protected void await() throws InterruptedException {
             logger.info(Thread.currentThread().getName() + ",  ready to lock ===");
             lock.lock();
             logger.info(Thread.currentThread().getName() + ", condition ready to await!");
@@ -88,7 +88,7 @@ public class LockTest extends ReentrantLock {
         }
 
         // 沉睡线程
-        protected void relaseLock () {
+        protected void signal () {
             logger.info(Thread.currentThread().getName() + ",condition ready to lock ===");
             lock.lock();
             logger.info(Thread.currentThread().getName() + ", condition ready to await!");
