@@ -1,9 +1,6 @@
 package target;
 
-import test.pers.YalongBai.test.handler.ArraySortTest;
-import test.pers.YalongBai.test.handler.IOTest;
-import test.pers.YalongBai.test.handler.ReflectTest;
-import test.pers.YalongBai.test.handler.ThrowableTest;
+import test.pers.YalongBai.test.handler.*;
 import test.pers.YalongBai.test.utils.Logger;
 
 import java.io.File;
@@ -68,9 +65,14 @@ public class myTest {
         /**
          * 数组测试
          * */
-        ArraySortTest sortTest = new ArraySortTest();
+        /*ArraySortTest sortTest = new ArraySortTest();
         sortTest.init();
-        sortTest.handler();
+        sortTest.handler();*/
+        /**
+         * （非）公平锁测试
+         */
+        LockTest lockTest = new LockTest();
+        lockTest.reentrantLockTest();
 
 
     }
